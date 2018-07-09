@@ -2,6 +2,11 @@ body{
     overflow: auto;
     color: #ffffff;
     user-select: none;
+    
+}
+
+div{
+    box-sizing: border-box;
 }
 
 p,h1,h2,h3,h4,h5,h6{
@@ -16,3 +21,12 @@ li{
     list-style-type:none;
 }
 
+
+input{
+    outline: none;
+    border: none;
+}
+
+a{
+    text-decoration-line: none;
+}

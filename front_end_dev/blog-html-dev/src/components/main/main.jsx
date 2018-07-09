@@ -3,6 +3,8 @@ import desk from './mainDesktop.scss';
 import phone from './mainPhone.scss'
 import icon from '../global/icon.scss';
 
+import RightInfo from './rightInfo.jsx';
+
 export default class Main extends React.Component {
     // constructor (){}
 
@@ -39,10 +41,7 @@ export default class Main extends React.Component {
             </section>
 
             <section className={`${desk.info} ${phone.info}`}>
-                <div>
-                    123456
-                </div>
-                
+                <RightInfo />
             </section>
         </div>);
     }
