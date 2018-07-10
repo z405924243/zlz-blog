@@ -1,0 +1,25 @@
+footer{
+    height: 50px;
+    // background-color: rgba(240,240,240,0.2);
+    background-color: rgb(54, 65, 75);
+    // box-shadow: 0 0 30px 4px rgb(37, 76, 112); 
+    // background: url('../../static/banner-bg/banner.jpg');
+    // background-attachment: fixed;
+    // filter: blur(2px);
+    color: #cccccc;
+    text-align: center;
+    font-size: 14px;
+    a:hover{
+      text-shadow: 0 0 3px #ffffff;
+    }
+    div{
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      p{
+        width: 100%;
+      }
+    }
+   
+  }

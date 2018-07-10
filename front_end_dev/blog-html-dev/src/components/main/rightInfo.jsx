@@ -27,7 +27,7 @@ export default class RightInfo extends React.Component {
                     </div>
 
                     <p className={style.abstract}>
-                        -- 如果你也听说。
+                        -- 山是眉峰聚，水是眼波横。
                     </p>
                 </div>
 

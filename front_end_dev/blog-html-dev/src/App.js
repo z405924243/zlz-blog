@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header/header.jsx';
 import Main from './components/main/main.jsx';
+import Footer from './components/footer/footer.jsx';
 import config from './config';
 // import logo from './logo.svg';
 import style from './App.scss';
@@ -18,7 +19,9 @@ class App extends Component {
         <main>
           <Main />
         </main>
-        
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }

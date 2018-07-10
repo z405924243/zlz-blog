@@ -1,7 +1,7 @@
 const config = {
     navigateBarItems:[{
         text:'首页',
-        url:'#',
+        url:'/',
         id:1,
     },
     {
@@ -20,9 +20,19 @@ const config = {
         id:4,
     },
     {
-        text:'关于我',
+        text:'友链',
         url:'#',
         id:5,
+    },
+    {
+        text:'留言板',
+        url:'#',
+        id:6,
+    },
+    {
+        text:'关于我',
+        url:'/about',
+        id:7,
     },
 ],
 }

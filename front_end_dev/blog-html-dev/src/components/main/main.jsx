@@ -1,9 +1,11 @@
 import React from 'react';
 import desk from './mainDesktop.scss';
 import phone from './mainPhone.scss'
-import icon from '../global/icon.scss';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import RightInfo from './rightInfo.jsx';
+import Home from './home.jsx';
+import About from './about.jsx';
 
 export default class Main extends React.Component {
     // constructor (){}
@@ -11,33 +13,8 @@ export default class Main extends React.Component {
     render() {
         return (<div className={`${desk.container} ${phone.container}`}>
             <section className={`${desk.content} ${phone.content}`}>
-                <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-                
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
             </section>
 
             <section className={`${desk.info} ${phone.info}`}>

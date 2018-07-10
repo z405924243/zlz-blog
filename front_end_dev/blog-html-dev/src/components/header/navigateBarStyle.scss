@@ -10,7 +10,8 @@
         box-shadow: 0 0 4px 1px rgba(240, 240, 240, 0.2);
         width: 100%;
         box-sizing: border-box;
-        li {
+        li a {
+            display: inline-block;
             margin-right: 10px;
             color: #ffffff;
             opacity: 0.8;
@@ -35,7 +36,7 @@
                 animation: showStar 0.5s ease;
             }
         }
-        .showstar {
+        .showstar a {
             text-shadow: rgb(255, 125, 125) 0 0 4px;
             color: rgb(255, 162, 162);
             i {
