@@ -14,11 +14,12 @@ export default class Main extends React.Component {
         return (<div className={`${desk.container} ${phone.container}`}>
             <section className={`${desk.content} ${phone.content}`}>
                 <Route exact path="/" component={Home} />
+                    <Route path="/page/:num" component={Home} />
                 <Route path="/about" component={About} />
             </section>
 
             <section className={`${desk.info} ${phone.info}`}>
-                <RightInfo />
+                <RightInfo datas={this.props.datas} />
             </section>
         </div>);
     }

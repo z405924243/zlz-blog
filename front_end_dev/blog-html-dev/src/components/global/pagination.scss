@@ -1,0 +1,15 @@
+.bar{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: #ffffff;
+    li,li a{
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 10px;
+        color: #666666;
+    }
+    .nowPage,.nowPage a{
+        color: rgb(122, 122, 255);
+    }
+}

@@ -1,40 +1,26 @@
 import React from 'react';
+import style from './about.scss';
 
 export default class About extends React.Component {
     // constructor (){}
 
     render() {
-        return (<div>
-                <article>
-                    <h4>66666666666666666666666666666666666666666</h4>
-                </article>
-                <article>
-                    <h4>111111111</h4>
-                    <p>11</p>
-                    <p>你喜欢1111111111什么呢</p>
-                    <p>你喜欢111111111111111什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-                
+        return (
+        <div>
+            <div className={style.about}>
+            <h4>你愁啥呢</h4>
+                哈哈哈哈哈哈哈哈哈
+            哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
+             哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
+              哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
+               哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
+                哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
+                 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈      
+                说了的复健科拉三等奖分两块聚隆科技离开家
+                sdklfjklsjdklfsdfjklkjsdlkfjkljlk
+                收到了房间里卡手机到了康复科历史记录快递费就离开j
+            <p>如何是好，这叫人如何是好啊！~</p>
+            </div>
         </div>);
     }
 }

@@ -1,41 +1,48 @@
 import React from 'react';
-import style from './home.scss';
+import Pagination from '../global/pagination.jsx';
+import Article from './article.jsx';
+
+import config from '../../config';
+import axios from 'axios';
 
 export default class Home extends React.Component {
-    // constructor (){}
+    constructor() {
+        super();
+        this.state = {
+            pageNum: 1,
+            lastPage: 10,
+            data:[]
+        }
+    }
+
+    pageChange = (pageNum) => {
+        this.setState({ pageNum: pageNum });
+        console.log(pageNum);
+    }
+
+    createList = () =>{
+        const self = this;
+        return self.state.data.map(blog=>
+            <Article key={blog.id} datas={blog}/>
+        );
+    }
+
+    componentWillMount() {
+        const self = this;
+        let params = {
+            pageNum:2,
+            pageSize:5
+        };
+        axios.post(config.requestUrl + '/blogs', params).then(res => {
+            self.setState({data:res.data.value});
+            self.createList();
+        })
+    }
 
     render() {
         return (<div>
-                <article>
-                    <h4>66666666666666666666666666666666666666666</h4>
-                </article>
-                <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-
-                 <article>
-                    <h4>biaoti</h4>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                    <p>你喜欢什么呢</p>
-                </article>
-                
+            {this.createList()}
+            <Pagination lastPage={this.state.lastPage} pageNum={this.state.pageNum} match={this.props.match} onPageChange={this.pageChange} />
         </div>);
     }
 }

@@ -20,19 +20,6 @@
             justify-content: space-between;
             section.content {
                 width: 70%;
-                article {
-                    color: #666666;
-                    font-size: 14px;
-                    box-sizing: border-box;
-                    box-shadow: 0 0 8px 1px rgba(29, 95, 139, .8); // background: linear-gradient( rgba(29, 95, 139, 0.8), rgba(240,240,240,.3));
-                    border-radius: 4px;
-                    margin-bottom: 30px;
-                    padding: 20px;
-                    background-color: #ffffff;
-                    h4 {
-                        margin-bottom: 20px;
-                    }
-                }
             }
             section.info {
                 width: 25%;

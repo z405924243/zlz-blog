@@ -15,8 +15,8 @@ export default class NavigateBar extends React.Component {
 
     creatByconfig = () => {
         const list = this.props.list.map(item =>
-            <li key={item.id} className={this.state.navSelected===item.id ? style.showstar : ''} onClick={(e)=>this.changeContent(item.id ,e)}>
-                <Link to={item.url}><i className={`${icon.iconfont} ${icon['icon-star-fill']}`}></i>{item.text}</Link>
+            <li key={item.id} onClick={(e)=>this.changeContent(item.id ,e)}>
+                <Link to={item.url} activeClassName='{style.showstar}'><i className={`${icon.iconfont} ${icon['icon-star-fill']}`}></i>{item.text}</Link>
             </li>
         )
         return (<ul className={style.list}>{list}</ul>);

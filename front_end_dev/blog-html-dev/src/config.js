@@ -1,4 +1,5 @@
 const config = {
+    requestUrl:'http://192.168.1.9:4000',
     navigateBarItems:[{
         text:'首页',
         url:'/',
@@ -35,6 +36,8 @@ const config = {
         id:7,
     },
 ],
+
+
 }
 
 export default config;

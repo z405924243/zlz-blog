@@ -17,7 +17,7 @@ export default class RightInfo extends React.Component {
                     <div className={style.showme}>
                         <img alt=''/>
                         <div>
-                            <h5>一个弱鸡╰_ ╯</h5>
+                            <h5>{this.props.datas.myNickname}</h5>
                             <p>
                                 <i className={`${icon.iconfont} ${icon['icon-zhihu-circle-fill']}`}></i>
                                 <i className={`${icon.iconfont} ${icon['icon-weibo']}`}></i>
@@ -27,7 +27,7 @@ export default class RightInfo extends React.Component {
                     </div>
 
                     <p className={style.abstract}>
-                        -- 山是眉峰聚，水是眼波横。
+                        {this.props.datas.mySignature}
                     </p>
                 </div>
 

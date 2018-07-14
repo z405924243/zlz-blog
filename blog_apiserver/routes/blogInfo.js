@@ -23,37 +23,24 @@ var responseJSON = function (res, ret) {
 };
 
 /* GET home page. */
-router.post('/', function (req, res, next) {
+router.get('/', function (req, res, next) {
     // 从连接池获取连接 
         pool.getConnection(function (err, connection) {
             // 获取前台页面传过来的参数  
-            var param = req.body;
-            console.log(req.body);
+            // var param = req.query || req.params;
             // 建立连接 增加一个用户信息 
             if (err) {
                 console.log(err);
                 return;
             }
-
-            /*期望的返回值
-             * {
-             * pageNum 页码
-             * pageSize 页面大小
-             * total 总条数
-             * value 值
-             * }
-            */
-           let sql = `SELECT * FROM blogs LIMIT ${(param.pageNum-1) * param.pageSize},${param.pageSize}`;
-           console.log(sql)
-            connection.query(sql, '', function (err, result) {
+            connection.query(blogsSQL.getBlogInit, '', function (err, result) {
                 if (result) {
                     result = {
                         code: 0,
                         message: 'ok',
-                        value: result
+                        value: result[0]
                     };
                 }
-                console.log(result)
 
                 // 以json形式，把操作结果返回给前台页面     
                 responseJSON(res, result);
