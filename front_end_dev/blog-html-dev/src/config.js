@@ -1,8 +1,8 @@
 const config = {
-    requestUrl:'http://192.168.1.9:4000',
+    requestUrl:'http://localhost:4000',
     navigateBarItems:[{
         text:'首页',
-        url:'/',
+        url:'/home',
         id:1,
     },
     {
@@ -22,12 +22,12 @@ const config = {
     },
     {
         text:'友链',
-        url:'#',
+        url:'/links',
         id:5,
     },
     {
         text:'留言板',
-        url:'#',
+        url:'/message',
         id:6,
     },
     {

@@ -1,13 +1,27 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import style from './pagination.scss';
 import icon from './icon.scss';
+import PageLink from './pageLink.jsx';
+
+import { Link } from "react-router-dom";
+
+import config from '../../config';
+import axios from 'axios';
 
 export default class Pagination extends React.Component{
+    
+    getPageNum (){
+        const url = window.location.href;
+        let num = url.split('/').pop();
+        if (isNaN(Number(num))) return 1;
+        else return Number(num);
+    }
+
     createList = () =>{
-        const size = this.props.lastPage;
-        const now = this.props.pageNum;
-        const url = this.props.match.url
+        const size = this.props.lastPage || 1;
+        const now =  this.getPageNum();
+        const url = this.props.match.url;
         let list=[];
         for (let i = 0; i<size; i++) {
             list.push(i+1);
@@ -25,33 +39,30 @@ export default class Pagination extends React.Component{
             }
         }
         return list.map(item =>
-            <li className={item===now ? style.nowPage : ''} >
-                <Link to={`${url}/page/${item}`}>{item}</Link>
+            <li>
+                    <PageLink url={url} item={item} />
             </li>);
     }
 
     // 前一页
     previousPage() {
-        if(this.props.pageNum===1) return;
-        return (<li title='上一页' className={`${icon.iconfont} ${icon['icon-left']}`} onClick={this.minusPage}></li>);
+        const num = this.getPageNum();
+        const url = this.props.match.url;
+        if(num===1) return;
+        return (<li>
+            <Link title='上一页' className={`${icon.iconfont} ${icon['icon-left']}`} to={`${url}/page/${num-1}`} />
+        </li>);
     }
     // 后一页
     nextPage() {
-        if(this.props.pageNum===this.props.lastPage) return;
-        return (<li title='下一页' className={`${icon.iconfont} ${icon['icon-right']}`} onClick={this.addPage}></li>);
-    }
-    addPage=()=> {
-        this.props.onPageChange(this.props.pageNum+1);
-    }
-    minusPage=()=>{
-        this.props.onPageChange(this.props.pageNum-1);
+        const num = this.getPageNum();
+        const url = this.props.match.url;
+        if(num===this.props.lastPage) return;
+        return (<li>
+            <Link title='下一页' className={`${icon.iconfont} ${icon['icon-right']}`} to={`${url}/page/${num+1}`} />
+        </li>);
     }
 
-    changePageHandle= (pageNum,e)=>{
-        if (pageNum === '...' || pageNum === this.props.pageNum) return;
-        this.props.onPageChange(pageNum);
-    }
-    
     render() {
         const list = this.createList();
         return (

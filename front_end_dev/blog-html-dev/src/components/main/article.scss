@@ -6,10 +6,35 @@ article {
     border-radius: 4px;
     margin-bottom: 30px;
     padding: 20px;
+    padding-top: 65px;
     background-color: #ffffff;
+    position: relative;
     h4 {
+        position: absolute;
+        top:20px;
         margin-bottom: 10px;
         font-size: 20px;
+        padding-bottom: 10px; 
+        a {
+            color: #666666;
+        }
+    }
+    h4:hover a{
+        color: #47c2dc;
+        transition: all 0.3s linear;
+    }
+    h4::after{
+        content: '';
+        width: 0;
+        height: 2px;
+        background: linear-gradient(to right,rgb(226, 84, 34), rgb(21, 21, 30));
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.3s linear;
+    }
+    h4:hover::after{
+        width: 100%;
     }
     .info{
         span{

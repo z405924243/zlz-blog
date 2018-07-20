@@ -25,31 +25,37 @@ var responseJSON = function (res, ret) {
 /* GET home page. */
 router.post('/', function (req, res, next) {
     // 从连接池获取连接 
-        pool.getConnection(function (err, connection) {
-            // 获取前台页面传过来的参数  
-            var param = req.body;
-            console.log(req.body);
-            // 建立连接 增加一个用户信息 
-            if (err) {
-                console.log(err);
-                return;
-            }
+    pool.getConnection(function (err, connection) {
+        // 获取前台页面传过来的参数  
+        var param = req.body;
+        // 建立连接 增加一个用户信息 
+        if (err) {
+            console.log(err);
+            return;
+        }
 
-            /*期望的返回值
-             * {
-             * pageNum 页码
-             * pageSize 页面大小
-             * total 总条数
-             * value 值
-             * }
-            */
-           let sql = `SELECT * FROM blogs LIMIT ${(param.pageNum-1) * param.pageSize},${param.pageSize}`;
-           console.log(sql)
+        /*期望的返回值
+         * {
+         * pageNum 页码
+         * pageSize 页面大小
+         * total 总条数
+         * value 值
+         * }
+         */
+        let sql = `SELECT * FROM blogs LIMIT ${(param.pageNum-1) * param.pageSize},${param.pageSize}`;
+
+
+        connection.query('select count(*) from blogs', '', function (errs, total) {
+
+            console.log(total);
+            var row = total[0]['count(*)']
             connection.query(sql, '', function (err, result) {
                 if (result) {
                     result = {
                         code: 0,
                         message: 'ok',
+                        total:row,
+                        lastPage:Math.ceil(row/param.pageSize),
                         value: result
                     };
                 }
@@ -63,6 +69,8 @@ router.post('/', function (req, res, next) {
 
             });
         });
+
+    });
 
     // conn.query(blogsSQL.queryAll, function (err, rows, fields) {
     //     debugger

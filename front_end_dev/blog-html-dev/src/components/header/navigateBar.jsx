@@ -2,7 +2,7 @@ import React from 'react';
 import style from './navigateBarStyle.scss';
 import icon from '../global/icon.scss';
 
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 export default class NavigateBar extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ export default class NavigateBar extends React.Component {
     creatByconfig = () => {
         const list = this.props.list.map(item =>
             <li key={item.id} onClick={(e)=>this.changeContent(item.id ,e)}>
-                <Link to={item.url} activeClassName='{style.showstar}'><i className={`${icon.iconfont} ${icon['icon-star-fill']}`}></i>{item.text}</Link>
+                <NavLink to={item.url} activeClassName={style.showstar}><i className={`${icon.iconfont} ${icon['icon-star-fill']}`}></i>{item.text}</NavLink>
             </li>
         )
         return (<ul className={style.list}>{list}</ul>);
