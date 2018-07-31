@@ -5,19 +5,19 @@ const config = {
         url:'/home',
         id:1,
     },
-    {
-        text:'技术',
-        url:'#',
-        id:2,
-    },
-    {
-        text:'心情',
-        url:'#',
-        id:3,
-    },
+    // {
+    //     text:'技术',
+    //     url:'#',
+    //     id:2,
+    // },
+    // {
+    //     text:'心情',
+    //     url:'#',
+    //     id:3,
+    // },
     {
         text:'日记',
-        url:'#',
+        url:'/diary',
         id:4,
     },
     {

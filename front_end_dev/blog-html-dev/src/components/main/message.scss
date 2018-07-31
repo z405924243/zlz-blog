@@ -1,0 +1,64 @@
+.message{
+    background-color: #ffffff;
+    padding: 40px 20px;
+    color: #666666;
+    font-size: 14px;
+
+    .visitorInfo{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        div{
+            position: relative;
+            width: 28%;
+            input{
+                width: 100%;
+                box-sizing: border-box;
+                border-bottom: 1px solid #aaaaaa;
+                padding: 10px;
+                font-size: 14px;
+            }
+            label.nofoucs{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                transition: all 0.2s;
+            }
+            label{
+                top:  -10px;
+                font-size: 12px;
+            } 
+        }
+    }
+
+    .send{
+        // float: right;
+        color: #566fff;
+        font-weight: 600;
+        background-color: #ffffff;
+        border: 1px solid #566fff;
+        border-radius: 4px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover{
+            background-color: #566fff;
+            color: #ffffff;
+        }
+    }
+    
+}
+
+.textarea{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    outline: none;
+    &:focus{
+        box-shadow: 0 0 4px 1px #c9c9fc;
+    }
+}
