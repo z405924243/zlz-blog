@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var blogsRouter = require('./routes/blogs');
 var blogInfoRouter = require('./routes/blogInfo');
 var links = require('./routes/links');
+var getMessage = require('./routes/getMessages');
+var insertMsg = require('./routes/insertMsg');
 
 var app = express();
 
@@ -28,6 +30,8 @@ app.use('/users', usersRouter);
 app.use('/blogs', blogsRouter);
 app.use('/blogInfo', blogInfoRouter);
 app.use('/links', links);
+app.use('/getMessage',getMessage);
+app.use('/insertMsg',insertMsg);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

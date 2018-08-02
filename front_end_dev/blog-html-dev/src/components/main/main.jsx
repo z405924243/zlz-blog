@@ -18,7 +18,7 @@ export default class Main extends React.Component {
         return (<div className={`${desk.container} ${phone.container}`}>
             <section className={`${desk.content} ${phone.content}`}>
                 <Route exact path="/">
-                    <Redirect exact from='/' to="/home"/>
+                    {/* <Redirect exact from='/' to="/home"/> */}
                 </Route>
             
                 <Route path="/home" component={Home} />
