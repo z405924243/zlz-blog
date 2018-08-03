@@ -1,6 +1,6 @@
 import React from 'react';
 import desk from './mainDesktop.scss';
-import phone from './mainPhone.scss';
+import phone from './mainPhone.scss'
 import { Redirect, Route  } from "react-router-dom";
 
 import RightInfo from './rightInfo.jsx';
