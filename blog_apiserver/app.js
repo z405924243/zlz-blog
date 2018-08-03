@@ -11,6 +11,7 @@ var blogInfoRouter = require('./routes/blogInfo');
 var links = require('./routes/links');
 var getMessage = require('./routes/getMessages');
 var insertMsg = require('./routes/insertMsg');
+var getMessageById = require('./routes/getMessageById');
 
 var app = express();
 
@@ -32,6 +33,7 @@ app.use('/blogInfo', blogInfoRouter);
 app.use('/links', links);
 app.use('/getMessage',getMessage);
 app.use('/insertMsg',insertMsg);
+app.use('/getMessageById',getMessageById);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

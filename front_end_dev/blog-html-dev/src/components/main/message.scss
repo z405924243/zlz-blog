@@ -60,6 +60,41 @@
             box-shadow: 0 0 4px 1px #c9c9fc;
         }
     }
+    .box{
+        position: relative;
+        .replyTextarea{
+            padding-top: 30px;
+        }
+        .replyInBox{
+            box-sizing: border-box;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            padding: 0 10px;
+            background-color: #fafafa;
+            border-radius: 4px;
+            width: calc(100% - 20px);
+            i{
+                margin-right: 10px;
+                color: #ffa2a2;
+            }
+            span{
+                color: #aaaaaa;
+                font-size: 12px;
+                float: right;
+                display: none;
+                cursor: pointer;
+                
+            }
+            &:hover span{
+                display: block;
+            }
+        }
+        
+        
+        
+    }
+    
 }
 
 .messagePad {
