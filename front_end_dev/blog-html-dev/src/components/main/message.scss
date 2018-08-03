@@ -1,0 +1,157 @@
+.message {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    color: #666666;
+    font-size: 14px;
+    .visitorInfo {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        div {
+            position: relative;
+            width: 28%;
+            input {
+                width: 100%;
+                box-sizing: border-box;
+                border-bottom: 1px solid #aaaaaa;
+                padding: 10px;
+                font-size: 14px;
+                color: gray;
+            }
+            label.nofoucs {
+                left: 10px;
+                top: 10px;
+                font-size: 14px;
+            }
+            label {
+                position: absolute;
+                top: -10px;
+                left: 10px;
+                font-size: 12px;
+                transition: all 0.2s;
+            }
+        }
+    }
+    .send {
+        // float: right;
+        color: #618afd;
+        font-weight: 600;
+        background-color: #ffffff;
+        border: 1px solid #618afd;
+        border-radius: 4px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+            background-color: #618afd;
+            color: #ffffff;
+        }
+    }
+    .textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        resize: none;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 15px;
+        outline: none;
+        &:focus {
+            box-shadow: 0 0 4px 1px #c9c9fc;
+        }
+    }
+    .box{
+        position: relative;
+        .replyTextarea{
+            padding-top: 30px;
+        }
+        .replyInBox{
+            box-sizing: border-box;
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            padding: 0 10px;
+            background-color: #fafafa;
+            border-radius: 4px;
+            width: calc(100% - 20px);
+            i{
+                margin-right: 10px;
+                color: #ffa2a2;
+            }
+            span{
+                color: #aaaaaa;
+                font-size: 12px;
+                float: right;
+                display: none;
+                cursor: pointer;
+                
+            }
+            &:hover span{
+                display: block;
+            }
+        }
+        
+        
+        
+    }
+    
+}
+
+.messagePad {
+    background-color: #ffffff;
+    padding: 20px;
+    color: #666666;
+    font-size: 14px;
+    margin-top: 20px;
+    .amsg {
+        border-top: 1px solid #cccccc;
+        padding: 20px 0;
+        position: relative;
+        display: flex;
+        &:first-child{
+            border: none;
+        }
+        img {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            float: left;
+            margin-right: 20px;
+        }
+        section {
+            flex-grow: 1;
+            p {
+                min-height: 25px;
+                margin-top: 10px;
+            }
+            time{
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                font-size: 12px;
+                color: #cccccc;
+                
+            }
+            input{
+                background-color: #ffffff;
+                color: #ffa2a2;
+                cursor: pointer;
+                padding: 0;
+            }
+        }
+
+        .reply{
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            h5{
+                color: #ffa2a2;
+            }
+            p{
+                color: #aaaaaa;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,11 @@
+data:{
+    code:0,
+    message:'ok',
+    value:{
+        pageSize:10,
+        pageNumber:1,
+        total:100,
+        lastPage:10,
+        value:[]
+    }
+}

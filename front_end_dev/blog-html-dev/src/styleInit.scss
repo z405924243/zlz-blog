@@ -2,6 +2,14 @@ body{
     overflow: auto;
     color: #ffffff;
     user-select: none;
+<<<<<<< HEAD
+=======
+    
+}
+
+div{
+    box-sizing: border-box;
+>>>>>>> dev
 }
 
 p,h1,h2,h3,h4,h5,h6{
@@ -9,10 +17,27 @@ p,h1,h2,h3,h4,h5,h6{
 }
 
 main{
+<<<<<<< HEAD
     height: 1000px;
+=======
+   
+>>>>>>> dev
 }
 
 li{
     list-style-type:none;
 }
 
+<<<<<<< HEAD
+=======
+
+input{
+    outline: none;
+    border: none;
+}
+
+a{
+    color: #ffffff;
+    text-decoration-line: none;
+}
+>>>>>>> dev
