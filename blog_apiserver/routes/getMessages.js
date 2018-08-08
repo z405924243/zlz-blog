@@ -27,13 +27,15 @@ router.get('/', function (req, res, next) {
     // 从连接池获取连接 
         pool.getConnection(function (err, connection) {
             // 获取前台页面传过来的参数  
-            // var param = req.query || req.params;
+            var param = req.query || req.params;
             // 建立连接 增加一个用户信息 
             if (err) {
                 console.log(err);
                 return;
             }
-            connection.query(blogsSQL.getMessage, '', function (err, result) {
+            var sql = param.id ? blogsSQL.getMessage+` where a.articleId=${param.id}`+' order by msgId desc' : blogsSQL.getMessage+` where ISNULL(a.articleId)`+' order by msgId desc';
+            console.log(sql)
+            connection.query(sql, '', function (err, result) {
                 if (result) {
                     result = {
                         code: 0,

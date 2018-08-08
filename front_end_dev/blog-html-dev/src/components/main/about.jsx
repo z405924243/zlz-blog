@@ -1,26 +1,34 @@
 import React from 'react';
 import style from './about.scss';
 
+import marked from 'marked';
+import config from '../../config';
+import axios from 'axios';
+
 export default class About extends React.Component {
-    // constructor (){}
+    constructor (){
+        super();
+        this.state={
+            data:''
+        }
+    }
+
+    setHtml(){
+        let content = marked(this.state.data||'');
+        return {__html:content };
+    }
+
+    componentWillMount () {
+        const self = this;
+        axios.get(config.requestUrl + '/getAbout').then(res => {
+            self.setState({data:res.data.value});
+        })
+    }
 
     render() {
         return (
         <div>
-            <div className={style.about}>
-            <h4>你愁啥呢</h4>
-                哈哈哈哈哈哈哈哈哈
-            哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
-             哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
-              哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
-               哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
-                哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈
-                 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈 哈哈哈哈哈哈哈哈哈      
-                说了的复健科拉三等奖分两块聚隆科技离开家
-                sdklfjklsjdklfsdfjklkjsdlkfjkljlk
-                收到了房间里卡手机到了康复科历史记录快递费就离开j
-            <p>如何是好，这叫人如何是好啊！~</p>
-            </div>
+            <div className={style.about} dangerouslySetInnerHTML={this.setHtml()}></div>
         </div>);
     }
 }

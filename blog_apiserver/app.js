@@ -12,6 +12,8 @@ var links = require('./routes/links');
 var getMessage = require('./routes/getMessages');
 var insertMsg = require('./routes/insertMsg');
 var getMessageById = require('./routes/getMessageById');
+var getBlogById = require('./routes/articleDetail');
+var getAbout = require('./routes/about');
 
 var app = express();
 
@@ -34,6 +36,8 @@ app.use('/links', links);
 app.use('/getMessage',getMessage);
 app.use('/insertMsg',insertMsg);
 app.use('/getMessageById',getMessageById);
+app.use('/getBlogById',getBlogById);
+app.use('/getAbout',getAbout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
