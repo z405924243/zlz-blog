@@ -1,16 +1,23 @@
 import React from 'react';
 import style from './rightInfo.scss';
 import icon from '../global/icon.scss';
+import { Link } from "react-router-dom";
 
 export default class RightInfo extends React.Component {
-    // constructor (){}
+    constructor (){
+        super();
+        this.state={
+            input:''
+        }
+    }
 
     render() {
         return (
             <div>
                 <div className={style.searchBar}>
                     <input type="text" placeholder='搜索一下吧~'/>
-                    <a href="javascript:;" className={`${icon.iconfont} ${icon['icon-search']}`} title='search'></a>
+                    <Link to={`/search`}><i className={`${icon.iconfont} ${icon['icon-search']}`} title='search'></i></Link>
+                    {/* <a href="javascript:;" className={`${icon.iconfont} ${icon['icon-search']}`} title='search'></a> */}
                 </div>
 
                 <div className={style.myinfo}>
@@ -43,7 +50,7 @@ export default class RightInfo extends React.Component {
                     <ul>
                         <li>技术</li>
                         <li>心情</li>
-                        <li>3</li>
+                        <li>其他</li>
                     </ul>
                 </div>
 
