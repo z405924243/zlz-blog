@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './about.scss';
+import mk from '../../styleInit.css';
 
 import marked from 'marked';
 import config from '../../config';
@@ -28,7 +29,7 @@ export default class About extends React.Component {
     render() {
         return (
         <div>
-            <div className={style.about} dangerouslySetInnerHTML={this.setHtml()}></div>
+            <div className={style.about + ' ' + mk['markdown-body']} dangerouslySetInnerHTML={this.setHtml()}></div>
         </div>);
     }
 }

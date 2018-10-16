@@ -5,7 +5,6 @@ import Footer from './components/footer/footer.jsx';
 import config from './config';
 // import logo from './logo.svg';
 import style from './App.scss';
-import './styleInit.scss';
 
 import axios from 'axios';
 
