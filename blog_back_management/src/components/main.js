@@ -35,11 +35,11 @@ class SiderMenu extends React.Component {
           >
             <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
               <Menu.Item key="1" onClick={() => this.changeItem('/blog')}>
-              <Icon type="form" theme="outlined" />
+              <Icon type="book" theme="outlined" />
                 <span>博客管理</span>
               </Menu.Item>
               <Menu.Item key="2" onClick={() => this.changeItem('/diary')}>
-              <Icon type="message" theme="outlined" />
+              <Icon type="read" theme="outlined" />
                 <span>日记管理</span>
               </Menu.Item>
               <Menu.Item key="3" onClick={() => this.changeItem('/')}>
@@ -58,18 +58,13 @@ class SiderMenu extends React.Component {
           </Sider>
           <Layout>
             <Content style={{ margin: "16px" }}>
-              {/* <Breadcrumb style={{ margin: "16px 0" }}>
-                <Breadcrumb.Item>User</Breadcrumb.Item>
-              </Breadcrumb> */}
-              <Card bordered={false}>
-                {/* <p>Card content</p>
-                <p>Card content</p>
-                <p>Card content</p> */}
-                <Switch>
-                  <Route path='/blog' Component={Blog} />
-                  <Route path='/diary' Component={Diary} />
+              {/* <Card bordered={false}> */}
+                  <Switch>
+                  <Route path='/blog' component={Blog} />
+                  <Route path='/diary' component={Diary} />
                 </Switch>
-              </Card>
+                
+              {/* </Card> */}
             </Content>
           </Layout>
         </Layout>
