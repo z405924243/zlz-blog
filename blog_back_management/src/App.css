@@ -5,3 +5,10 @@
   background: rgba(255,255,255,.2);
   margin: 16px;
 }
+
+a{
+  color: #ffffff;
+}
+a:active {
+  text-decoration: none;
+}

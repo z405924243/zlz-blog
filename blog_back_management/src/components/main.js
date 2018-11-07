@@ -1,9 +1,12 @@
 import { Layout, Menu, Icon, Card } from "antd";
 import React from "react";
+import { Switch, Route, Link, withRouter} from 'react-router-dom';
 
+import Blog from './blog';
+import Diary from './diary';
 const { Header, Content, Sider } = Layout;
 
-export default class SiderMenu extends React.Component {
+class SiderMenu extends React.Component {
   state = {
     collapsed: false
   };
@@ -11,6 +14,12 @@ export default class SiderMenu extends React.Component {
   onCollapse = collapsed => {
     this.setState({ collapsed });
   };
+
+  changeItem(key){
+    // debugger
+    const { history } = this.props;
+    history.push(key);
+  }
 
   render() {
     return (
@@ -25,23 +34,23 @@ export default class SiderMenu extends React.Component {
             onCollapse={this.onCollapse}
           >
             <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-              <Menu.Item key="1">
+              <Menu.Item key="1" onClick={() => this.changeItem('/blog')}>
               <Icon type="form" theme="outlined" />
-                <span>写博客</span>
+                <span>博客管理</span>
               </Menu.Item>
-              <Menu.Item key="2">
+              <Menu.Item key="2" onClick={() => this.changeItem('/diary')}>
               <Icon type="message" theme="outlined" />
-                <span>写日记</span>
+                <span>日记管理</span>
               </Menu.Item>
-              <Menu.Item key="3">
+              <Menu.Item key="3" onClick={() => this.changeItem('/')}>
               <Icon type="link" theme="outlined" />
                 <span>友链管理</span>
               </Menu.Item>
-              <Menu.Item key="4">
+              <Menu.Item key="4" onClick={() => this.changeItem('/')}>
               <Icon type="profile" theme="outlined" />
                 <span>留言/评论审核</span>
               </Menu.Item>
-              <Menu.Item key="5">
+              <Menu.Item key="5" onClick={() => this.changeItem('/')}>
                 <Icon type="user" />
                 <span>个人中心</span>
               </Menu.Item>
@@ -53,9 +62,13 @@ export default class SiderMenu extends React.Component {
                 <Breadcrumb.Item>User</Breadcrumb.Item>
               </Breadcrumb> */}
               <Card bordered={false}>
+                {/* <p>Card content</p>
                 <p>Card content</p>
-                <p>Card content</p>
-                <p>Card content</p>
+                <p>Card content</p> */}
+                <Switch>
+                  <Route path='/blog' Component={Blog} />
+                  <Route path='/diary' Component={Diary} />
+                </Switch>
               </Card>
             </Content>
           </Layout>
@@ -64,3 +77,5 @@ export default class SiderMenu extends React.Component {
     );
   }
 }
+
+export default withRouter(SiderMenu);
