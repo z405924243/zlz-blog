@@ -4,6 +4,7 @@ import { Switch, Route, Link, withRouter} from 'react-router-dom';
 
 import Blog from './blog';
 import Diary from './diary';
+import WriteBlog from './writeBlog';
 const { Header, Content, Sider } = Layout;
 
 class SiderMenu extends React.Component {
@@ -34,6 +35,10 @@ class SiderMenu extends React.Component {
             onCollapse={this.onCollapse}
           >
             <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+            <Menu.Item key="6" onClick={() => this.changeItem('/writeBlog')}>
+              <Icon type="edit" theme="outlined" />
+                <span>写博客</span>
+              </Menu.Item>
               <Menu.Item key="1" onClick={() => this.changeItem('/blog')}>
               <Icon type="book" theme="outlined" />
                 <span>博客管理</span>
@@ -62,6 +67,7 @@ class SiderMenu extends React.Component {
                   <Switch>
                   <Route path='/blog' component={Blog} />
                   <Route path='/diary' component={Diary} />
+                  <Route path='/writeBlog' component={WriteBlog} />
                 </Switch>
                 
               {/* </Card> */}

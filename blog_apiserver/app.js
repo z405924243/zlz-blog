@@ -38,6 +38,9 @@ app.use('/insertMsg',insertMsg);
 app.use('/getMessageById',getMessageById);
 app.use('/getBlogById',getBlogById);
 app.use('/getAbout',getAbout);
+app.use('/onlineStateChange', require('./routes/onlineStateChange'));
+app.use('/deleteBlog', require('./routes/deleteBlog'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
