@@ -1,5 +1,6 @@
 const config = {
-    requestUrl:'http://localhost:3000',
+    // requestUrl:'http://localhost:3000',
+    requestUrl: 'http://119.27.174.60:4000',
     navigateBarItems:[{
         text:'首页',
         url:'/home',
