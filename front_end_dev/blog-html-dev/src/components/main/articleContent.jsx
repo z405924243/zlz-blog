@@ -2,6 +2,7 @@ import React from 'react';
 import marked from 'marked';
 import style from './articleContent.scss';
 import icon from '../global/icon.scss';
+import mk from '../../styleInit.css';
 
 import config from '../../config';
 import axios from 'axios';
@@ -77,7 +78,7 @@ export default class Content extends React.Component {
                 <span className={`${icon.iconfont} ${icon['icon-edit-square']}`}>评论：0</span>
             </p>
             {/* <p>{data.content}</p> */}
-            <div dangerouslySetInnerHTML={this.plainMdToHtml()}></div>
+            <div className={mk['markdown-body']} dangerouslySetInnerHTML={this.plainMdToHtml()}></div>
         </article>
         <h4 className={style.pl}>发表评论：</h4>
         <MessageBoard articleId={this.props.match.params.articleId}/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import desk from './mainDesktop.scss';
 import phone from './mainPhone.scss'
-import { Redirect, Route  } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 import RightInfo from './rightInfo.jsx';
 import Home from './home.jsx';
@@ -17,16 +17,15 @@ export default class Main extends React.Component {
     render() {
         return (<div className={`${desk.container} ${phone.container}`}>
             <section className={`${desk.content} ${phone.content}`}>
-                <Route exact path="/">
-                    {/* <Redirect exact from='/' to="/home"/> */}
-                </Route>
-            
+            <Switch>
+                <Redirect exact from='/' to="/home"/>
                 <Route path="/home" component={Home} />
                 <Route path="/diary" component={Diary} />
                 <Route path="/links" component={Links} />
                 <Route path="/message" component={Message} />
                 <Route path="/about" component={About} />
                 <Route path="/article/:articleId" component={Content} />
+            </Switch>
                 
             </section>
 
