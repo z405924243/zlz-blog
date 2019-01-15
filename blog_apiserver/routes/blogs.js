@@ -42,7 +42,7 @@ router.post('/', function (req, res, next) {
          * value 值
          * }
          */
-        let sql = `SELECT * FROM blogs LIMIT ${(param.pageNum-1) * param.pageSize},${param.pageSize}`;
+        let sql = `SELECT * FROM blogs where online = 1 LIMIT ${(param.pageNum-1) * param.pageSize},${param.pageSize}`;
 
 
         connection.query('select count(*) from blogs where online = 1', '', function (errs, total) {
