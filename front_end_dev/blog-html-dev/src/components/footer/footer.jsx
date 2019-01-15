@@ -15,6 +15,7 @@ export default class Footer extends React.Component {
                 <p>
                     Powered By <a href="#"><i>me</i></a> | Designed By <a href="#"><i>me</i></a> | Server By <a href="https://www.aliyun.com"><i>aliyun</i></a>
                 </p>
+                <p><a href="http://www.miitbeian.gov.cn">渝ICP备17014506号</a></p>
             </div>
         );
     }
