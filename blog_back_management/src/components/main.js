@@ -19,6 +19,7 @@ class SiderMenu extends React.Component {
   changeItem(key){
     // debugger
     const { history } = this.props;
+    // const history = this.props.history;
     history.push(key);
   }
 

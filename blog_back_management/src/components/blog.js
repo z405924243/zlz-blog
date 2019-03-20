@@ -1,12 +1,13 @@
 import React from 'react';
 import {Card} from 'antd';
 import axios from 'axios';
+import withHttp from './fuction/http';
 
 import { Table, Divider, Tag, Modal } from 'antd';
 
 const { confirm } = Modal;
 
-export default class Blog extends React.Component {
+ class Blog extends React.Component {
     state = {
         data: [],
         pagination: {},
@@ -67,7 +68,7 @@ export default class Blog extends React.Component {
           // okType: 'danger',
           cancelText: '取消',
           onOk() {
-            axios.get(`http://localhost:3000/onlineStateChange?id=${id}&state=${Number(state)}`).then((res)=>{
+            self.props.http.get(`onlineStateChange?id=${id}&state=${Number(state)}`).then((res)=>{
               self.fetch({
                 pageNum:1,
                 pageSize:10
@@ -86,7 +87,7 @@ export default class Blog extends React.Component {
           cancelText: '取消',
           onOk() {
             
-            axios.get(`http://localhost:3000/deleteBlog?id=${id}`).then((res)=>{
+            self.props.http.get(`deleteBlog?id=${id}`).then((res)=>{
               self.fetch({
                 pageNum:1,
                 pageSize:10
@@ -111,11 +112,11 @@ export default class Blog extends React.Component {
       }
     
       fetch = (params = {}) => {
-        axios.post('http://localhost:3000/blogs', params).then((data) => {
+        this.props.http.post('getAllBlog', params).then((data) => {
           const pagination = { ...this.state.pagination };
-          pagination.total = data.data.total;
+          pagination.total = data.total;
           this.setState({
-            data: data.data.value,
+            data: data.value,
             pagination,
           });
         });
@@ -136,3 +137,5 @@ export default class Blog extends React.Component {
         </div>)
     }
 }
+
+export default withHttp(Blog);
