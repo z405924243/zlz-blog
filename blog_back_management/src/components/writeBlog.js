@@ -51,7 +51,7 @@ export default class WriteBlog extends React.Component {
             tags: '',
             online: 1
         }
-        axios.post('http://localhost:3000/addBlog', params).then(res=>{
+        axios.post('http://localhost:3001/addBlog', params).then(res=>{
             debugger
         })
     }
