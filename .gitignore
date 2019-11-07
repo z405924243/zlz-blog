@@ -1,1 +1,4 @@
 node_modules
+/blog_apiserver/db/
+
+.vscode
