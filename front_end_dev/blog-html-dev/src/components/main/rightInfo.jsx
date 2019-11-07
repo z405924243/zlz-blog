@@ -25,7 +25,7 @@ export default class RightInfo extends React.Component {
                         <img alt=''/>
                         <div>
                             <h5>{this.props.datas.myNickname}</h5>
-                            <p>
+                            {/* <p>
                                 <a href="https://www.zhihu.com/people/ni-bu-ping-fan-59/activities" title='知乎'>
                                   <i className={`${icon.iconfont} ${icon['icon-zhihu-circle-fill']}`}></i>  
                                 </a>
@@ -36,7 +36,7 @@ export default class RightInfo extends React.Component {
                                     <i className={`${icon.iconfont} ${icon['icon-github-fill']}`}></i>
                                 </a>
                                 
-                            </p>
+                            </p> */}
                         </div>
                     </div>
 

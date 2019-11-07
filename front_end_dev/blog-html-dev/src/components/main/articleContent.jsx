@@ -80,8 +80,8 @@ export default class Content extends React.Component {
             {/* <p>{data.content}</p> */}
             <div className={mk['markdown-body']} dangerouslySetInnerHTML={this.plainMdToHtml()}></div>
         </article>
-        <h4 className={style.pl}>发表评论：</h4>
-        <MessageBoard articleId={this.props.match.params.articleId}/>
+        {/* <h4 className={style.pl}>发表评论：</h4>
+        <MessageBoard articleId={this.props.match.params.articleId}/> */}
         </div>
         );
     }
